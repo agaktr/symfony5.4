@@ -230,7 +230,6 @@ MAILER_DSN=sendgrid://${SENDGRID_API_KEY}@default
 {social}_ID=
 {social}_SECRET=
 ```
-
 ### 2.7. Create database
 
 ```bash

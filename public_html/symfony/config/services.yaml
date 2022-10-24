@@ -24,5 +24,7 @@ services:
         #class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
         class: App\Security\UserBridge
 
+    Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler:
+        arguments: [ '@snc_redis.session' ]
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
