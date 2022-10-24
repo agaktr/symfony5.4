@@ -25,6 +25,7 @@ security:
             json_login:
                 # api_login is a route we will create below
                 check_path: app_api_login
+                username_path: email
             logout:
                 path: app_logout
                 # where to redirect after logout

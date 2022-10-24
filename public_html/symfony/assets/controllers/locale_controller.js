@@ -1,5 +1,5 @@
 import { Controller } from '@hotwired/stimulus';
-import { getCookie,setCookie} from "../utility";
+import { getCookie,setCookie } from "../js/utility";
 
 export default class extends Controller {
 

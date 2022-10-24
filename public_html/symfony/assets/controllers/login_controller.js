@@ -9,7 +9,8 @@ export default class extends Controller {
     login(event) {
         event.preventDefault();
 
-        const form = event.currentTarget.closest('form');
+        const form = new FormData(event.currentTarget.closest('form'));
+        const data = Object.fromEntries(form.entries());
         const url = event.currentTarget.closest('[data-url]').dataset.url;
 
         fetch(url,{
@@ -18,11 +19,10 @@ export default class extends Controller {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: JSON.stringify(form.serialize())
+            body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(response => {
-
 
                 console.log(response)
         })

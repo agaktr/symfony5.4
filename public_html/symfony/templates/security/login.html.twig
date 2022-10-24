@@ -1,4 +1,5 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.front.html.twig' %}
+
 {% trans_default_domain 'login' %}
 {% block title %}{% trans %}Log in!{% endtrans %}{% endblock %}
 
@@ -40,4 +41,6 @@
     </a>
 </form>
 
+
+    {% include 'security/api.login.html.twig' %}
 {% endblock %}
