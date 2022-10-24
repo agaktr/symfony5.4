@@ -1,8 +1,8 @@
 /**
  * FROG START
  * Some serious fun at first :D
+ * This is a frog that jumps around the console when you open it.
  */
-
 export function frog() {
     (function doTheThing() {
         // Act on either the window.console, or the normal console.
@@ -84,57 +84,4 @@ export function frog() {
 /**
  * FROG END
  * Done of serious fun :/
- */
-
-/**
- * COOKIES START
- */
-
-export function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-export function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-/**
- * COOKIES END
- */
-
-/**
- * VIEWPORT MOBILE FIX START
- */
-
-export function viewportFix() {
-    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-    let vh = window.innerHeight * 0.01;
-    // Then we set the value in the --vh custom property to the root of the document
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-    // We listen to the resize event
-    window.addEventListener('resize', () => {
-        // We execute the same script as before
-        vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
-}
-
-/**
- * VIEWPORT MOBILE FIX END
  */
